@@ -24,6 +24,7 @@
       </div>
     </div>
     <div class="index-right">
+      <slide-show :slides='slides' :inv="slideSpeed"></slide-show>
       <div class="index-board-list">
         <div
         class="index-board-item"
@@ -44,17 +45,46 @@
 </template>
 
 <script>
+import slideShow from '../components/slideShow'
+
 export default {
+  components:{
+    slideShow
+  },
 	created: function (){
-        this.$http.get(api/getNewsList)
-        .then(function () {
-
-        },function () {
-
+        this.$http.get('api/getNewsList')
+        .then((res) => {
+          // console.log(res.data)
+          this.newList = res.data
+        },(error) => {
+          console.log(error)
         })
 	},
 	data () {
 		return {
+      slideSpeed: 2000,
+      slides: [
+        {
+          src: require('../assets/slideShow/pic1.jpg'),
+          title: 'xxx1',
+          href: 'detail/analysis'
+        },
+        {
+          src: require('../assets/slideShow/pic2.jpg'),
+          title: 'xxx2',
+          href: 'detail/count'
+        },
+        {
+          src: require('../assets/slideShow/pic3.jpg'),
+          title: 'xxx3',
+          href: 'http://xxx.xxx.com'
+        },
+        {
+          src: require('../assets/slideShow/pic4.jpg'),
+          title: 'xxx4',
+          href: 'detail/forecast'
+        }
+      ],
 			boardList: [
 		        {
 		          title: '开放产品',
@@ -85,25 +115,7 @@ export default {
 		          saleout: false
 		        }
 		    ],
-			newList: [
-                {
-	              title: '数据统计',
-	              url: 'http://starcraft.com'
-	            },
-	            {
-	              title: '数据预测',
-	              url: 'http://warcraft.com'
-	            },
-	            {
-	              title: '流量分析',
-	              url: 'http://overwatch.com',
-	              hot: true
-	            },
-	            {
-	              title: '广告发布',
-	              url: 'http://hearstone.com'
-	            }
-			],
+			newList: [],
 			productList: {
 				pc: {
                     title: 'PC产品',
