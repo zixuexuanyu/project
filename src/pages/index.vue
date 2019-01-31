@@ -118,49 +118,49 @@ export default {
 			newList: [],
 			productList: {
 				pc: {
-                    title: 'PC产品',
-                    list: [
-                        {
-			              name: '数据统计',
-			              url: 'http://starcraft.com'
-			            },
-			            {
-			              name: '数据预测',
-			              url: 'http://warcraft.com'
-			            },
-			            {
-			              name: '流量分析',
-			              url: 'http://overwatch.com',
-			              hot: true
-			            },
-			            {
-			              name: '广告发布',
-			              url: 'http://hearstone.com'
-			            }
-                    ]
+            title: 'PC产品',
+            list: [
+                {
+                  name: '数据统计',
+                  url: '##'
+                },
+                {
+                  name: '数据预测',
+                  url: '##'
+                },
+                {
+                  name: '流量分析',
+                  url: '##',
+                  hot: true
+                },
+                {
+                  name: '广告发布',
+                  url: '##'
+                }
+            ]
 				},
 				app: {
-                    title: '应用类',
-                    last: true,
-                    list: [
-                        {
-			              name: '91助手',
-			              url: 'http://weixin.com'
-			            },
-			            {
-			              name: '产品助手',
-			              url: 'http://twitter.com',
-			              hot: true
-			            },
-			            {
-			              name: '智能地图',
-			              url: 'http://maps.com'
-			            },
-			            {
-			              name: '团队语音',
-			              url: 'http://phone.com'
-			            }
-                    ]
+            title: '应用类',
+            last: true,
+            list: [
+                {
+                  name: '91助手',
+                  url: '##'
+                },
+                {
+                  name: '产品助手',
+                  url: '##',
+                  hot: true
+                },
+                {
+                  name: '智能地图',
+                  url: '##'
+                },
+                {
+                  name: '团队语音',
+                  url: '##'
+                }
+            ]
 				}
 			}
 		}
